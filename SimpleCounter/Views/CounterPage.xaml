@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCounter.Views.CounterPage">
+
+        <StackLayout Margin="20">
+           
+            <Label x:Name="LabelCount"
+                   FontSize="300"
+                   Text="{Binding Source={x:Reference Incrementer}, Path=Value, StringFormat='{0:F0}'}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <Stepper x:Name="Incrementer"
+                     Minimum="0"
+                     Maximum="100"
+                     Increment="1" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand" />
+
+            <Button x:Name="ClearButton" 
+                    Clicked="ClearButton_Clicked"
+                    Text="Clear"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"/>
+                    
+
+        </StackLayout>
+
+</ContentPage>
